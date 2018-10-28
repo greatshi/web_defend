@@ -1,0 +1,956 @@
+{% load  staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web 防护系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+
+    <!-- <link rel="icon" type="image/ico" href="http://tattek.com/minimal/assets/images/favicon.ico" /> -->
+    <!-- Bootstrap -->
+    <link href="{% static "css/vendor/bootstrap/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/vendor/animate/animate.min.css" %}">
+    <link type="text/css" rel="stylesheet" media="all" href"{% static "js/vendor/mmenu/css/jquery.mmenu.all.css" %}" />
+    <link rel="stylesheet" href="{% static "js/vendor/videobackground/css/jquery.videobackground.css" %}">
+    <link rel="stylesheet" href="{% static "css/vendor/bootstrap-checkbox.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/rickshaw/css/rickshaw.min.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/morris/css/morris.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/tabdrop/css/tabdrop.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/summernote/css/summernote.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/summernote/css/summernote-bs3.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/chosen/css/chosen.min.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/chosen/css/chosen-bootstrap.css" %}">
+    <link href="{% static "css/minimal.css" %}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="bg-1">
+    <!-- Preloader -->
+    <div class="mask"><div id="loader"></div></div>
+    <!--/Preloader -->
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Make page fluid -->
+      <div class="row">
+        <!-- Page content -->
+        <div id="content" class="col-md-12">
+          <!-- page header -->
+          <div class="pageheader">
+            <h2><i class="fa fa-tachometer"></i><strong> Web防护系统</strong>
+            <!-- <span><strong>block chain & deep learning</strong></span></h2> -->
+          </div>
+          <!-- /page header -->
+          <!-- content main container -->
+          <div class="main">
+            <!-- cards -->
+            <div class="row cards">
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card card-redbrown hover">
+                  <div class="front">
+                    <div class="media">
+                      <span class="pull-left">
+                        <i class="fa fa-users media-object"></i>
+                      </span>
+                      <div class="media-body">
+                        <small><strong>区块链长度</strong></small>
+                        <h2 class="media-heading animate-number" data-value="7" data-animation-duration="7" id="cards_0_1">0</h2>
+                      </div>
+                    </div>
+                    <div class="progress-list">
+                      <div class="details">
+                        <div class="title">预期 %</div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="83" data-animation-duration="1500" id="cards_0_2">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="83%" id="cards_0_3"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <a href="#">
+                      <i class="fa fa-bar-chart-o fa-4x"></i>
+                      <span>Check Summary</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card card-blue hover">
+                  <div class="front">
+                    <div class="media">
+                      <span class="pull-left">
+                        <i class="fa fa-shopping-cart media-object"></i>
+                      </span>
+                      <div class="media-body">
+                        <small>待确认事务量</small>
+                        <h2 class="media-heading animate-number" data-value="3" data-animation-duration="3" id="cards_1_1">0</h2>
+                      </div>
+                    </div>
+
+                    <div class="progress-list">
+                      <div class="details">
+                        <div class="title">当前挖矿速度 %</div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="100" data-animation-duration="1500" id="cards_1_2">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="100%" id="cards_1_3"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="back">
+                    <a href="#">
+                      <i class="fa fa-bar-chart-o fa-4x"></i>
+                      <span>Check Summary</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card card-greensea hover">
+                  <div class="front">
+
+                    <div class="media">
+                      <span class="pull-left">
+                        <i class="fa fa-usd media-object"></i>
+                      </span>
+
+                      <div class="media-body">
+                        <small>矿工节点</small>
+                        <h2 class="media-heading animate-number" data-value="5" data-animation-duration="5" id="cards_2_1">0</h2>
+                      </div>
+                    </div>
+
+                    <div class="progress-list">
+                      <div class="details">
+                        <div class="title">在线率 %</div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="42" data-animation-duration="1500" id="cards_2_2">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="42%" id="cards_2_3"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="back">
+                    <a href="#">
+                      <textarea cols="20" id="nodes_txt" name="content" rows="1"></textarea>
+                      <div id="register_nodes_btn"><button class="btn btn-primary" type="button">添加节点</button></div>
+                      <div id="consensus_btn"><button class="btn btn-primary" type="button">同步区块</button></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-container col-lg-3 col-sm-6 col-xs-12">
+                <div class="card card-slategray hover">
+                  <div class="front">
+
+                    <div class="media">
+                      <span class="pull-left">
+                        <i class="fa fa-eye media-object"></i>
+                      </span>
+
+                      <div class="media-body">
+                        <small>访问量</small>
+                        <h2 class="media-heading animate-number" data-value="5790" data-animation-duration="5790" id="cards_3_1">0</h2>
+                      </div>
+                    </div>
+
+                    <div class="progress-list">
+                      <div class="details">
+                        <div class="title">负载率 %</div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="25" data-animation-duration="1500" id="cards_3_2">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="25%" id="cards_3_3"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="back">
+                    <a href="#">
+                      <i class="fa fa-bar-chart-o fa-4x"></i>
+                      <span>Check Summary</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- /cards -->
+
+            <!-- row -->
+            <div class="row">
+              <!-- col 8 -->
+              <div class="col-lg-8 col-md-12">
+                <!-- tile -->
+                <section class="tile color transparent-black">
+
+                  <!-- tile header -->
+                  <div class="tile-header">
+                    <h1><strong>页面状态</strong></h1>
+                    <!-- <div class="search">
+                      <input type="text" placeholder="Search...">
+                    </div> -->
+                    <div class="controls">
+                      <a href="#" class="refresh"><i class="fa fa-refresh"></i></a>
+                      <a href="#" class="remove"><i class="fa fa-times"></i></a>
+                      <div id="mine_btn"><button class="btn btn-primary" data-loading-text="Changing" type="button">Mine</button></div>
+                    </div>
+                  </div>
+                  <!-- /tile header -->
+
+
+                  <!-- tile body -->
+                  <div class="tile-body no-vpadding">
+                    <div class="table-responsive">
+                      <table class="table table-custom table-sortable nomargin">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Web应用</th>
+                            <th>状态</th>
+                            <th>访问负载</th>
+                            <th class="text-right">更新</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td id="web_01">web_01</td>
+                            <td id="web_01_status" class="color-green priority">safe status</td>
+                            <td class="progress-cell">
+                              <div class="progress-info">
+                                <div class="percent"><span class="animate-number" data-value="5" data-animation-duration="1500" id="web_01_per">0</span>%</div>
+                              </div>
+                              <div class="progress progress-little">
+                                <div class="progress-bar progress-bar-transparent-white animate-progress-bar" data-percentage="5%" id="web_01_bar"></div>
+                              </div>
+                            </td>
+                            <td class="col-md-1"><div id="web_01_btn"><button class="btn btn-danger" data-loading-text="Changing" type="button">Change</button></div></td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td id="web_02">web_02</td>
+                            <td id="web_02_status" class="color-green priority">safe status</td>
+                            <td class="progress-cell">
+                              <div class="progress-info">
+                                <div class="percent"><span class="animate-number" data-value="3" data-animation-duration="1500" id="web_02_per">0</span>%</div>
+                              </div>
+                              <div class="progress progress-little">
+                                <div class="progress-bar progress-bar-transparent-white animate-progress-bar" data-percentage="3%" id="web_02_bar"></div>
+                              </div>
+                            </td>
+                            <td class="col-md-1"><div id="web_02_btn"><button class="btn btn-danger" data-loading-text="Changing" type="button">Change</button></div></td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td id="web_03">web_03</td>
+                            <td id="web_03_status" class="color-green priority">safe status</td>
+                            <td class="progress-cell">
+                              <div class="progress-info">
+                                <div class="percent"><span class="animate-number" data-value="7" data-animation-duration="1500" id="web_03_per">0</span>%</div>
+                              </div>
+                              <div class="progress progress-little">
+                                <div class="progress-bar progress-bar-transparent-white animate-progress-bar" data-percentage="7%" id="web_03_bar"></div>
+                              </div>
+                            </td>
+                            <td class="col-md-1"><div id="web_03_btn"><button class="btn btn-danger" data-loading-text="Changing" type="button">Change</button></div></td>
+                            <!-- <td class="text-right"><span id="projectbar3">74,77,82,91,69,63,46,42</span></td> -->
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td id="web_04">web_04</td>
+                            <td id="web_04_status" class="color-green priority">safe status</td>
+                            <td class="progress-cell">
+                              <div class="progress-info">
+                                <div class="percent"><span class="animate-number" data-value="3" data-animation-duration="1500" id="web_04_per">0</span>%</div>
+                              </div>
+                              <div class="progress progress-little">
+                                <div class="progress-bar progress-bar-transparent-white animate-progress-bar" data-percentage="3%" id="web_04_bar"></div>
+                              </div>
+                            </td>
+                            <td class="col-md-1"><div id="web_04_btn"><button class="btn btn-danger" data-loading-text="Changing" type="button">Change</button></div></td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td id="web_05">web_05</td>
+                            <td id="web_05_status" class="color-green priority">safe status</td>
+                            <td class="progress-cell">
+                              <div class="progress-info">
+                                <div class="percent"><span class="animate-number" data-value="9" data-animation-duration="1500" id="web_05_per">0</span>%</div>
+                              </div>
+                              <div class="progress progress-little">
+                                <div class="progress-bar progress-bar-transparent-white animate-progress-bar" data-percentage="9%" id="web_05_bar"></div>
+                              </div>
+                            </td>
+                            <td class="col-md-1"><div id="web_05_btn"><button class="btn btn-danger" data-loading-text="Changing" type="button">Change</button></div></td>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td id="web_06">web_06</td>
+                            <td id="web_06_status" class="color-green priority">safe status</td>
+                            <td class="progress-cell">
+                              <div class="progress-info">
+                                <div class="percent"><span class="animate-number" data-value="9" data-animation-duration="1500" id="web_06_per">0</span>%</div>
+                              </div>
+                              <div class="progress progress-little">
+                                <div class="progress-bar progress-bar-transparent-white animate-progress-bar" data-percentage="9%"  id="web_06_bar"></div>
+                              </div>
+                            </td>
+                            <td class="col-md-1"><div id="web_06_btn"><button class="btn btn-danger" data-loading-text="Changing" type="button">Change</button></div></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- /tile body -->
+
+
+                  <!-- tile footer -->
+                  <!-- <div class="tile-footer text-center">
+                    <ul class="pagination pagination-sm nomargin pagination-custom">
+                      <li class="disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                    </ul>
+                  </div> -->
+                  <!-- /tile footer -->
+                </section>
+                <!-- /tile -->
+                <!-- tile -->
+                <section class="tile transparent">
+
+                  <!-- tile header -->
+                  <div class="tile-header color transparent-black textured rounded-top-corners">
+                    <h1><strong>区块浏览</strong></h1>
+                    <div class="controls">
+                      <a href="#" class="refresh"><i class="fa fa-refresh"></i></a>
+                      <a href="#" class="remove"><i class="fa fa-times"></i></a>
+                    </div>
+                  </div>
+                  <!-- /tile header -->
+                  <!-- tile widget -->
+                  <div class="tile-widget color transparent-black textured">
+                    <table class="table table-bordered table-striped">
+					             <thead class="thin-border-bottom">
+					               <tr>
+					                 <th>块高度</th>
+					                 <th>播报方</th>
+					                 <th>时间</th>
+													 <th>块哈希</th>
+					               </tr>
+					             </thead>
+											 <tbody id="blockchain_table"></tbody>
+								     </table>
+                  </div>
+                  <!-- /tile widget -->
+
+                </section>
+                <!-- /tile -->
+
+
+              </div>
+              <!-- /col 8 -->
+
+              <!-- col 4 -->
+              <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <!-- tile -->
+                <section class="tile color transparent-black textured">
+                  <!-- tile header -->
+                  <div class="tile-header">
+                    <h1><strong>服务器负载</strong></h1>
+                    <div class="controls">
+                      <a href="#" class="refresh"><i class="fa fa-refresh"></i></a>
+                      <a href="#" class="remove"><i class="fa fa-times"></i></a>
+                    </div>
+                  </div>
+                  <!-- /tile header -->
+
+                  <!-- tile widget -->
+                  <div class="tile-widget">
+                    <div class="progress-list with-heading">
+                      <div class="details">
+                        <div class="title"><h2><i class="fa fa-hdd-o"></i> <span class="animate-number" data-value="394" data-animation-duration="1600">0</span> GB</h2></div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="42" data-animation-duration="1500">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black" style="margin-bottom: 5px">
+                        <div class="progress-bar animate-progress-bar" data-percentage="42%"></div>
+                      </div>
+                    </div>
+                    <p class="description"><strong>394GB</strong> used of <strong class="white-text">2,048GB</strong> on File Server</p>
+                  </div>
+                  <!-- /tile widget -->
+                  <!-- tile body -->
+                  <div class="tile-body paddingtop">
+                  	<div id="chart_test"></div>
+                    <div id="serverload-chart"></div>
+                  </div>
+                  <!-- /tile body -->
+                </section>
+                <!-- /tile -->
+                <!-- tile -->
+                <section class="tile color transparent-black">
+                  <!-- tile header -->
+                  <div class="tile-header">
+                    <h1><strong>浏览器使用情况</strong></h1>
+                    <div class="controls">
+                      <a href="#" class="refresh"><i class="fa fa-refresh"></i></a>
+                      <a href="#" class="remove"><i class="fa fa-times"></i></a>
+                    </div>
+                  </div>
+                  <!-- /tile header -->
+                  <!-- tile body -->
+                  <div class="tile-body">
+                    <div id="browser-usage" style="height: 230px;" class="morris-chart"></div>
+                    <ul class="inline text-center chart-legend">
+                      <li><span class="badge badge-outline" style="border-color: #00a3d8"></span> Chrome <small>25%</small>,</li>
+                      <li><span class="badge badge-outline" style="border-color: #1693A5"></span> Other <small>25%</small>,</li>
+                      <li><span class="badge badge-outline" style="border-color: #2fbbe8"></span> Safari <small>20%</small>,</li>
+                      <li><span class="badge badge-outline" style="border-color: #72cae7"></span> Firefox <small>15%</small>,</li>
+                      <li><span class="badge badge-outline" style="border-color: #ffc100"></span> Internet Explorer <small>10%</small>,</li>
+                      <li><span class="badge badge-outline" style="border-color: #d9544f"></span> Opera <small>5%</small></li>
+                    </ul>
+                  </div>
+                  <!-- /tile body -->
+                </section>
+
+              </div>
+              <!-- /col 4 -->
+
+
+            </div>
+            <!-- /row -->
+
+
+            <!-- row -->
+            <div class="row">
+
+
+              <!-- col 6 -->
+              <div class="col-md-6">
+
+              </div>
+              <!-- /col 6 -->
+
+
+              <!-- col 6 -->
+              <div class="col-md-6">
+
+
+              </div>
+              <!-- /col 6 -->
+
+
+            </div>
+            <!-- /row -->
+
+
+
+          </div>
+          <!-- /content container -->
+
+        </div>
+        <!-- Page content end -->
+      </div>
+      <!-- Make page fluid-->
+    </div>
+    <!-- Wrap all page content end -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static "js/jquery.js" %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "js/vendor/bootstrap/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/mmenu/js/jquery.mmenu.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/sparkline/jquery.sparkline.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/nicescroll/jquery.nicescroll.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/animate-numbers/jquery.animateNumbers.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/videobackground/jquery.videobackground.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/blockui/jquery.blockUI.js" %}"></script>
+
+    <script src="{% static "js/vendor/flot/jquery.flot.min.js" %}"></script>
+    <script src="{% static "js/vendor/flot/jquery.flot.time.min.js" %}"></script>
+    <script src="{% static "js/vendor/flot/jquery.flot.selection.min.js" %}"></script>
+    <script src="{% static "js/vendor/flot/jquery.flot.animator.min.js" %}"></script>
+    <script src="{% static "js/vendor/flot/jquery.flot.orderBars.js" %}"></script>
+    <script src="{% static "js/vendor/easypiechart/jquery.easypiechart.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/rickshaw/raphael-min.js" %}"></script>
+    <script src="{% static "js/vendor/rickshaw/d3.v2.js" %}"></script>
+    <script src="{% static "js/vendor/rickshaw/rickshaw.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/morris/morris.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/tabdrop/bootstrap-tabdrop.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/summernote/summernote.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/chosen/chosen.jquery.min.js" %}"></script>
+
+    <script src="{% static "js/minimal.min.js" %}"></script>
+
+    <script>
+    $(function(){
+
+      // Initialize card flip
+      $('.card.hover').hover(function(){
+        $(this).addClass('flip');
+      },function(){
+        $(this).removeClass('flip');
+      });
+
+      // Initialize flot chart
+      var d1 =[ [1, 715],
+            [2, 985],
+            [3, 1525],
+            [4, 1254],
+            [5, 1861],
+            [6, 2621],
+            [7, 1987],
+            [8, 2136],
+            [9, 2364],
+            [10, 2851],
+            [11, 1546],
+            [12, 2541]
+      ];
+      var d2 =[ [1, 463],
+                [2, 578],
+                [3, 327],
+                [4, 984],
+                [5, 1268],
+                [6, 1684],
+                [7, 1425],
+                [8, 1233],
+                [9, 1354],
+                [10, 1200],
+                [11, 1260],
+                [12, 1320]
+      ];
+      var months = ["January", "February", "March", "April", "May", "Juny", "July", "August", "September", "October", "November", "December"];
+
+
+      $(window).resize(function() {
+        // redraw the graph in the correctly sized div
+        plot.resize();
+        plot.setupGrid();
+        plot.draw();
+      });
+
+      $('#mmenu').on(
+        "opened.mm",
+        function()
+        {
+          // redraw the graph in the correctly sized div
+          plot.resize();
+          plot.setupGrid();
+          plot.draw();
+        }
+      );
+
+      $('#mmenu').on(
+        "closed.mm",
+        function()
+        {
+          // redraw the graph in the correctly sized div
+          plot.resize();
+          plot.setupGrid();
+          plot.draw();
+        }
+      );
+
+      function update_crards() {
+ 			 $.ajax({
+ 				 type: "post",
+ 				 dataType: "json",
+ 				 url: "/data/",
+ 				 data: {'id': 'cards'},
+ 				 success: function(data) {
+ 						 var typeData = data;
+ 						 $.each(typeData, function(i, n) {
+               $("#cards_0_1").html(n.num_0);
+               $("#cards_0_2").html(n.percentage_0);
+               $("#cards_0_3").width(n.percentage_0 + '%');
+               $("#cards_1_1").html(n.num_1);
+               $("#cards_1_2").html(n.percentage_1);
+               $("#cards_1_3").width(n.percentage_1 + '%');
+               $("#cards_2_1").html(n.num_2);
+               $("#cards_2_2").html(n.percentage_2);
+               $("#cards_2_3").width(n.percentage_2 + '%');
+               $("#cards_3_1").html(n.num_3);
+               $("#cards_3_2").html(n.percentage_3);
+               $("#cards_3_3").width(n.percentage_3 + '%');
+
+ 						 });
+ 				 },
+ 				 error: function(data) {
+           //alert("加载失败1");
+ 				 }
+ 			 });
+ 		 }
+
+     $(function() {
+        $("#register_nodes_btn .btn").click(function(){
+          var node_ip = $("#nodes_txt").val();
+          register_nodes(node_ip);
+          });
+     });
+     function register_nodes(node_ip) {
+      $.ajax({
+        type: "post",
+        dataType: "json",
+        url: "/miner/",
+        data: {'action': 'register_nodes', 'node_ip': node_ip},
+        success: function(data) {
+            var typeData = data;
+            for(var i=0; i<typeData.length; i++){
+              var message = typeData[i].message;
+              var total_nodes = typeData[i].total_nodes;
+              alert(message +'\n'+ total_nodes);
+
+            }
+        },
+        error: function(data) {
+          //alert("加载失败1");
+        }
+      });
+     }
+
+     $(function() {
+        $("#consensus_btn .btn").click(function(){
+          consensus();
+          });
+     });
+     function consensus() {
+      $.ajax({
+        type: "post",
+        dataType: "json",
+        url: "/miner/",
+        data: {'action': 'consensus'},
+        success: function(data) {
+            var typeData = data;
+            for(var i=0; i<typeData.length; i++){
+              var message = typeData[i].message;
+              alert(message);
+            }
+        },
+        error: function(data) {
+          //alert("加载失败1");
+        }
+      });
+     }
+
+     function update_trans() {
+      $.ajax({
+        type: "post",
+        dataType: "json",
+        url: "/data/",
+        data: {'id': 'trans'},
+        success: function(data) {
+            var typeData = data;
+            for(var i=0; i<typeData.length; i++){
+              var name = typeData[i].page_name;
+              if(name == 'web_01'){
+                $("#web_01").html(name);
+                $("#web_01_status").removeClass();
+                $("#web_01_bar").width(typeData[i].page_balance + '%');
+                $("#web_01_per").html(typeData[i].page_balance);
+                if(typeData[i].trans_id == typeData[i].last_hash){
+                  $("#web_01_status").addClass("color-green priority");
+                  $("#web_01_status").html("safe status");
+                }
+                else {
+                  alert(typeData[i].diff);
+                  $("#web_01_status").addClass("color-red priority");
+                  $("#web_01_status").html("page tampered");
+                }
+              }
+              if(name == 'web_02'){
+                $("#web_02").html(name);
+                $("#web_02_status").removeClass();
+                $("#web_02_bar").width(typeData[i].page_balance + '%');
+                $("#web_02_per").html(typeData[i].page_balance);
+                if(typeData[i].trans_id == typeData[i].last_hash){
+                  $("#web_02_status").addClass("color-green priority");
+                  $("#web_02_status").html("safe status");
+                }
+                else {
+                  alert(typeData[i].diff);
+                  $("#web_02_status").addClass("color-red priority");
+                  $("#web_02_status").html("page tampered");
+                }
+              }
+              if(name == 'index.asp'){
+                $("#web_03").html(name);
+                $("#web_03_status").removeClass();
+                $("#web_03_bar").width(typeData[i].page_balance + '%');
+                $("#web_03_per").html(typeData[i].page_balance);
+                if(typeData[i].trans_id == typeData[i].last_hash){
+                  $("#web_03_status").addClass("color-green priority");
+                  $("#web_03_status").html("safe status");
+                }
+                else {
+                  alert(typeData[i].diff);
+                  $("#web_03_status").addClass("color-red priority");
+                  $("#web_03_status").html("page tampered");
+                }
+              }
+              if(name == 'download'){
+                $("#web_04").html(name);
+                $("#web_04_status").removeClass();
+                $("#web_04_bar").width(typeData[i].page_balance + '%');
+                $("#web_04_per").html(typeData[i].page_balance);
+                if(typeData[i].trans_id == typeData[i].last_hash){
+                  $("#web_04_status").addClass("color-green priority");
+                  $("#web_04_status").html("safe status");
+                }
+                else {
+                  alert(typeData[i].diff);
+                  $("#web_04_status").addClass("color-red priority");
+                  $("#web_04_status").html("page tampered");
+                }
+              }
+              //class="color-red priority"
+              //class="color-orange priority"
+            }
+        },
+        error: function(data) {
+          //alert("加载失败1");
+        }
+      });
+    }
+    $(function() {
+       $("#web_01_btn .btn").click(function(){
+         var web_id = '01';
+         update_change(web_id);
+         // $(this).button('loading').delay(2).queue(function() {
+         });
+    });
+    $(function() {
+       $("#web_02_btn .btn").click(function(){
+         var web_id = '02';
+         update_change(web_id);
+         // $(this).button('loading').delay(2).queue(function() {
+         });
+    });
+    $(function() {
+       $("#web_03_btn .btn").click(function(){
+         var web_id = '03';
+         update_change(web_id);
+         // $(this).button('loading').delay(2).queue(function() {
+         });
+    });
+    $(function() {
+       $("#web_04_btn .btn").click(function(){
+         var web_id = '04';
+         update_change(web_id);
+         // $(this).button('loading').delay(2).queue(function() {
+         });
+    });
+
+    function update_change(web_id) {
+     $.ajax({
+       type: "post",
+       dataType: "json",
+       url: "/data/",
+       data: {'id': 'change', 'web_id': web_id},
+       success: function(data) {
+           var typeData = data;
+           for(var i=0; i<typeData.length; i++){
+             var msg = typeData[i].msg;
+             alert(msg);
+           }
+       },
+       error: function(data) {
+         //alert("加载失败1");
+       }
+     });
+    }
+
+    $(function() {
+       $("#mine_btn .btn").click(function(){
+         mine();
+         });
+    });
+    function mine() {
+     $.ajax({
+       type: "post",
+       dataType: "json",
+       url: "/miner/",
+       data: {'action': 'mine'},
+       success: function(data) {
+           var typeData = data;
+           for(var i=0; i<typeData.length; i++){
+             var message = typeData[i].message;
+             alert(message);
+           }
+       },
+       error: function(data) {
+         //alert("加载失败1");
+       }
+     });
+    }
+
+    function update_blockchain() {
+      $.ajax({
+        type: "post",
+        dataType: "json",
+        url: "/miner/",
+        data: {'action': 'full_chain'},
+        success: function(data) {
+            var typeData = data;
+            $("#blockchain_table").empty();
+            $.each(typeData[0].chain, function(i, n) {
+                var tbBody = ""
+                var trColor;
+                if (i % 2 == 0) {
+                    trColor = "even";
+                }
+                else {
+                    trColor = "odd";
+                }
+                tbBody += "<tr class='" + trColor + "'>" +
+                  "<td>" + n.index + "</td>" +
+                  "<td>" + n.sender + "</td>" +
+                  "<td>" + n.timestamp + "</td>" +
+                  "<td><a href=/miner/" + n.block_hash + " >" + n.block_hash + "</a></td>" +
+                "</tr>";
+                $("#blockchain_table").append(tbBody);
+            });
+        },
+        error: function(data) {
+          $("#blockchain_table").empty();
+          $("#blockchain_table").append("加载失败");
+        }
+      });
+    }
+ 		 function timeDown(limit) {
+ 			 limit--;
+        if (limit < 0) {
+ 				 limit = 1;
+         update_trans();
+         update_blockchain();
+         update_crards();
+         ajaxGraph2.request();
+        }
+        // $('#time').text(limit + '秒后刷新');
+ 			 setTimeout(function() {
+          timeDown(limit);
+        }, 1000)
+       }
+ 			$(document).ready(function() {
+        update_trans();
+        update_blockchain();
+        ajaxGraph2.request();
+        update_crards();
+ 				timeDown(5);
+    	});
+
+      // server load rickshaw chart
+      var ajaxGraph2 = new Rickshaw.Graph.Ajax( {
+       element: document.querySelector("#chart_test"),
+       height: 150,
+       renderer: 'area',
+       dataURL: '/data/',
+       onData: function(d) { d[0].data[0].y = 80; return d },
+       series: [
+       {
+        name: 'File Server',
+        color: '#6e6e6e',
+       }, {
+        name: 'Mail Server',
+        color: '#fff',
+       }
+       ]
+       } );
+
+      // Morris donut chart
+      Morris.Donut({
+        element: 'browser-usage',
+        data: [
+          {label: "Chrome", value: 25},
+          {label: "Safari", value: 20},
+          {label: "Firefox", value: 15},
+          {label: "Opera", value: 5},
+          {label: "Internet Explorer", value: 10},
+          {label: "Other", value: 25}
+        ],
+        colors: ['#00a3d8', '#2fbbe8', '#72cae7', '#d9544f', '#ffc100', '#1693A5']
+      });
+
+      $('#browser-usage').find("path[stroke='#ffffff']").attr('stroke', 'rgba(0,0,0,0)');
+
+      //sparkline charts
+      $('#projectbar1').sparkline('html', {type: 'bar', barColor: '#22beef', barWidth: 4, height: 20});
+      $('#projectbar2').sparkline('html', {type: 'bar', barColor: '#cd97eb', barWidth: 4, height: 20});
+      $('#projectbar3').sparkline('html', {type: 'bar', barColor: '#a2d200', barWidth: 4, height: 20});
+      $('#projectbar4').sparkline('html', {type: 'bar', barColor: '#ffc100', barWidth: 4, height: 20});
+      $('#projectbar5').sparkline('html', {type: 'bar', barColor: '#ff4a43', barWidth: 4, height: 20});
+      $('#projectbar6').sparkline('html', {type: 'bar', barColor: '#a2d200', barWidth: 4, height: 20});
+
+      // sortable table
+      $('.table.table-sortable th.sortable').click(function() {
+        var o = $(this).hasClass('sort-asc') ? 'sort-desc' : 'sort-asc';
+        $('th.sortable').removeClass('sort-asc').removeClass('sort-desc');
+        $(this).addClass(o);
+      });
+
+      //todo's
+      $('#todolist li label').click(function() {
+        $(this).toggleClass('done');
+      });
+
+      // Initialize tabDrop
+      $('.tabdrop').tabdrop({text: '<i class="fa fa-th-list"></i>'});
+
+      //load wysiwyg editor
+      $('#quick-message-content').summernote({
+        toolbar: [
+          //['style', ['style']], // no style button
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['height', ['height']],
+          //['insert', ['picture', 'link']], // no insert buttons
+          //['table', ['table']], // no table button
+          //['help', ['help']] //no help button
+        ],
+        height: 143   //set editable area's height
+      });
+
+      //multiselect input
+      $(".chosen-select").chosen({disable_search_threshold: 10});
+
+    })
+
+    </script>
+  </body>
+</html>

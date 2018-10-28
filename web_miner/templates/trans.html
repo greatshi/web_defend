@@ -1,0 +1,407 @@
+{% load  staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web 防护系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+
+    <!-- <link rel="icon" type="image/ico" href="http://tattek.com/minimal/assets/images/favicon.ico" /> -->
+    <!-- Bootstrap -->
+    <link href="{% static "css/vendor/bootstrap/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/vendor/animate/animate.min.css" %}">
+    <link type="text/css" rel="stylesheet" media="all" href"{% static "js/vendor/mmenu/css/jquery.mmenu.all.css" %}" />
+    <link rel="stylesheet" href="{% static "js/vendor/videobackground/css/jquery.videobackground.css" %}">
+    <link rel="stylesheet" href="{% static "css/vendor/bootstrap-checkbox.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/rickshaw/css/rickshaw.min.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/morris/css/morris.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/tabdrop/css/tabdrop.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/summernote/css/summernote.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/summernote/css/summernote-bs3.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/chosen/css/chosen.min.css" %}">
+    <link rel="stylesheet" href="{% static "js/vendor/chosen/css/chosen-bootstrap.css" %}">
+    <link href="{% static "css/minimal.css" %}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="bg-1">
+    <!-- Preloader -->
+    <div class="mask"><div id="loader"></div></div>
+    <!--/Preloader -->
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Make page fluid -->
+      <div class="row">
+        <!-- Page content -->
+        <div id="content" class="col-md-12">
+          <!-- page header -->
+          <div class="pageheader">
+            <h2><i class="fa fa-tachometer"></i><strong> 事务浏览</strong>
+            <!-- <span><strong>block chain & deep learning</strong></span></h2> -->
+          </div>
+          <!-- /page header -->
+          <!-- content main container -->
+          <div class="main">
+            <!-- cards -->
+            <div class="row cards">
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card card-redbrown hover">
+                  <div class="front">
+                    <div class="media">
+                      <span class="pull-left">
+                        <i class="fa fa-users media-object"></i>
+                      </span>
+                      <div class="media-body">
+                        <large>页面名称</large>
+                        <h2 class="media-heading animate-number" data-value={{page_name}} data-animation-duration="27">{{index}}</h2>
+                      </div>
+                    </div>
+                    <div class="progress-list">
+                      <div class="details">
+                        <div class="title">%</div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="83" data-animation-duration="1500" id="cards_0_2">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="83%" id="cards_0_3"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <a href="#">
+                      <i class="fa fa-bar-chart-o fa-4x"></i>
+                      <span>页面名称</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card card-blue hover">
+                  <div class="front">
+                    <div class="media">
+                      <span class="pull-left">
+                        <i class="fa fa-shopping-cart media-object"></i>
+                      </span>
+                      <div class="media-body">
+                        <large>事务数量</large>
+                        <h2 class="media-heading animate-number" data-value=1 data-animation-duration="3" id="cards_1_1">{{trans_num}}</h2>
+                      </div>
+                    </div>
+
+                    <div class="progress-list">
+                      <div class="details">
+                        <div class="title"> %</div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="97" data-animation-duration="1500" id="cards_1_2">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="97%" id="cards_1_3"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="back">
+                    <a href="#">
+                      <i class="fa fa-bar-chart-o fa-4x"></i>
+                      <span>事务数量</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+                <div class="card card-greensea hover">
+                  <div class="front">
+
+                    <div class="media">
+                      <span class="pull-left">
+                        <i class="fa fa-usd media-object"></i>
+                      </span>
+
+                      <div class="media-body">
+                        <large>发送方</large>
+                        <h2 class="media-heading animate-number" data-value={{sender}} data-animation-duration="5" id="cards_2_1">{{sender}}</h2>
+                      </div>
+                    </div>
+
+                    <div class="progress-list">
+                      <div class="details">
+                        <div class="title"> %</div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="42" data-animation-duration="1500" id="cards_2_2">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="42%" id="cards_2_3"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="back">
+                    <a href="#">
+                      <i class="fa fa-bar-chart-o fa-4x"></i>
+                      <span>发送方</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-container col-lg-3 col-sm-6 col-xs-12">
+                <div class="card card-slategray hover">
+                  <div class="front">
+
+                    <div class="media">
+                      <span class="pull-left">
+                        <i class="fa fa-eye media-object"></i>
+                      </span>
+
+                      <div class="media-body">
+                        <large>修改时间</large>
+                        <h5 class="media-heading " data-value={{timestamp}} >{{timestamp}}</h5>
+                      </div>
+                    </div>
+
+                    <div class="progress-list">
+                      <div class="details">
+                        <div class="title"> %</div>
+                      </div>
+                      <div class="status pull-right bg-transparent-black-1">
+                        <span class="animate-number" data-value="25" data-animation-duration="1500" id="cards_3_2">0</span>%
+                      </div>
+                      <div class="clearfix"></div>
+                      <div class="progress progress-little progress-transparent-black">
+                        <div class="progress-bar animate-progress-bar" data-percentage="25%" id="cards_3_3"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="back">
+                    <a href="#">
+                      <i class="fa fa-bar-chart-o fa-4x"></i>
+                      <span>修改时间</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- /cards -->
+
+            <!-- row -->
+            <div class="row">
+              <!-- col 8 -->
+              <div class="col-lg-12 col-md-12">
+                <!-- tile -->
+                <section class="tile color transparent-black">
+
+                  <!-- tile header -->
+                  <div class="tile-header">
+                    <h1><strong>页面事务</strong></h1>
+                    <div class="controls">
+                      <a href="#" class="refresh"><i class="fa fa-refresh"></i></a>
+                      <a href="#" class="remove"><i class="fa fa-times"></i></a>
+                    </div>
+                  </div>
+                  <!-- /tile header -->
+                  <!-- tile body -->
+                  <div class="tile-body no-vpadding">
+                    <div class="table-responsive">
+                      <table class="table table-custom table-sortable nomargin">
+                        <thead>
+                          <tr>
+                            <th>修改前</th>
+                            <th>修改后</th>
+                          </tr>
+                        </thead>
+                        <!-- <tbody id="trans_table"></tbody> -->
+                        <tbody>
+                          <tr>
+                            <td>{{before}}</td>
+                            <td>{{after}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- /tile body -->
+                </section>
+                <!-- /tile -->
+              </div>
+            </div>
+            <!-- /row -->
+
+          </div>
+          <!-- /content container -->
+
+        </div>
+        <!-- Page content end -->
+      </div>
+      <!-- Make page fluid-->
+    </div>
+    <!-- Wrap all page content end -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static "js/jquery.js" %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "js/vendor/bootstrap/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/mmenu/js/jquery.mmenu.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/sparkline/jquery.sparkline.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/nicescroll/jquery.nicescroll.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/animate-numbers/jquery.animateNumbers.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/videobackground/jquery.videobackground.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/blockui/jquery.blockUI.js" %}"></script>
+
+    <script src="{% static "js/vendor/flot/jquery.flot.min.js" %}"></script>
+    <script src="{% static "js/vendor/flot/jquery.flot.time.min.js" %}"></script>
+    <script src="{% static "js/vendor/flot/jquery.flot.selection.min.js" %}"></script>
+    <script src="{% static "js/vendor/flot/jquery.flot.animator.min.js" %}"></script>
+    <script src="{% static "js/vendor/flot/jquery.flot.orderBars.js" %}"></script>
+    <script src="{% static "js/vendor/easypiechart/jquery.easypiechart.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/rickshaw/raphael-min.js" %}"></script>
+    <script src="{% static "js/vendor/rickshaw/d3.v2.js" %}"></script>
+    <script src="{% static "js/vendor/rickshaw/rickshaw.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/morris/morris.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/tabdrop/bootstrap-tabdrop.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/summernote/summernote.min.js" %}"></script>
+
+    <script src="{% static "js/vendor/chosen/chosen.jquery.min.js" %}"></script>
+
+    <script src="{% static "js/minimal.min.js" %}"></script>
+
+    <script>
+    $(function(){
+
+      // Initialize card flip
+      $('.card.hover').hover(function(){
+        $(this).addClass('flip');
+      },function(){
+        $(this).removeClass('flip');
+      });
+
+      $(window).resize(function() {
+        // redraw the graph in the correctly sized div
+        plot.resize();
+        plot.setupGrid();
+        plot.draw();
+      });
+
+      $('#mmenu').on(
+        "opened.mm",
+        function()
+        {
+          // redraw the graph in the correctly sized div
+          plot.resize();
+          plot.setupGrid();
+          plot.draw();
+        }
+      );
+
+      $('#mmenu').on(
+        "closed.mm",
+        function()
+        {
+          // redraw the graph in the correctly sized div
+          plot.resize();
+          plot.setupGrid();
+          plot.draw();
+        }
+      );
+
+
+
+    function update_trans() {
+      // alert(1);
+      // var typeData = [{data:{{data}}}];
+      // alert(typeData);
+      // var typeData = data;
+      // $("#trans_table").empty();
+      // $.each(typeData, function(i, n) {
+      //     var tbBody = ""
+      //     var trColor;
+      //     if (i % 2 == 0) {
+      //         trColor = "even";
+      //     }
+      //     else {
+      //         trColor = "odd";
+      //     }
+      //     tbBody += "<tr class='" + trColor + "'>" +
+      //       "<td>" + n.index + "</td>" +
+      //       "<td>" + n.sender + "</td>" +
+      //       "<td>" + n.timestamp + "</td>" +
+      //       "<td><a href=http://127.0.0.1:8000/miner/" + n.block_hash + " >" + n.block_hash + "</a></td>" +
+      //     "</tr>";
+      //     $("#trans_table").append(tbBody);
+      // });
+    }
+
+ 		 function timeDown(limit) {
+ 			 limit--;
+        if (limit < 0) {
+ 				 limit = 1;
+         // update_trans();
+        }
+        // $('#time').text(limit + '秒后刷新');
+ 			 setTimeout(function() {
+          timeDown(limit);
+        }, 1000)
+       }
+ 			$(document).ready(function() {
+        // update_trans();
+ 				timeDown(5);
+    	});
+
+      // sortable table
+      $('.table.table-sortable th.sortable').click(function() {
+        var o = $(this).hasClass('sort-asc') ? 'sort-desc' : 'sort-asc';
+        $('th.sortable').removeClass('sort-asc').removeClass('sort-desc');
+        $(this).addClass(o);
+      });
+
+      //todo's
+      $('#todolist li label').click(function() {
+        $(this).toggleClass('done');
+      });
+
+      // Initialize tabDrop
+      $('.tabdrop').tabdrop({text: '<i class="fa fa-th-list"></i>'});
+
+      //load wysiwyg editor
+      $('#quick-message-content').summernote({
+        toolbar: [
+          //['style', ['style']], // no style button
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['height', ['height']],
+          //['insert', ['picture', 'link']], // no insert buttons
+          //['table', ['table']], // no table button
+          //['help', ['help']] //no help button
+        ],
+        height: 143   //set editable area's height
+      });
+
+      //multiselect input
+      $(".chosen-select").chosen({disable_search_threshold: 10});
+
+    })
+
+    </script>
+  </body>
+</html>
