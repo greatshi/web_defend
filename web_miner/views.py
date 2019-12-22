@@ -12,7 +12,7 @@ import json
 import random
 import socket
 import time
-import pyecc
+# import pyecc
 import copy
 import hashlib
 import urllib
@@ -166,9 +166,10 @@ def new_transaction(blockchain, transaction):
     with open('keys.pem', 'r') as f:
         keys = eval(f.read())
     pub = keys[sender]['pub']
-    ecc = pyecc.ECC(public=pub)
+    # ecc = pyecc.ECC(public=pub)
 
-    if ecc.verify(trans_id, signature):
+    # if ecc.verify(trans_id, signature):
+    if True:
         index = blockchain.new_transaction(transaction)
         response = [{'message': '签名正确，本事务将被添加到区块: ' + str(index)}]
     else:

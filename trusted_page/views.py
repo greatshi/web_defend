@@ -14,7 +14,7 @@ import urllib
 import urllib2
 import chardet
 import time
-import pyecc
+# import pyecc
 
 
 import web_server.blockchain as blockchain
@@ -114,9 +114,9 @@ def page_balance(page_name):
     if (page_balance > 100):
         page_balance = random.randint(95, 99)
     elif (page_balance == 0):
-        page_balance = random.randint(5, 7)
+        page_balance = random.randint(13, 57)
     else:
-        page_balance += random.randint(0, 1)
+        page_balance += random.randint(13, 57)
     return page_balance
 
 
@@ -208,9 +208,9 @@ def new_trans(url, page_name):
         keys = eval(f.read())
     pub = keys[sender]['pub']
     pri = keys[sender]['pri']
-    ecc = pyecc.ECC(public=pub, private=pri)
-    signature = ecc.sign(trans_id)
-    # signature = 'sig'
+    # ecc = pyecc.ECC(public=pub, private=pri)
+    # signature = ecc.sign(trans_id)
+    signature = 'sig'
     # send to miner
     transaction = {'trans_id': trans_id, 'sender': sender,
                    'page_name': page_name, 'last_hash': last_hash,
